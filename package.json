@@ -10,11 +10,10 @@
     "tdd": "nodemon --exec jasmine"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "jasmine": "^3.3.1",
-    "nodemon": "^1.18.10",
-    "sinon": "^7.3.1"
+    "nodemon": "^1.18.10"
   }
 }

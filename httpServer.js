@@ -2,13 +2,8 @@ const http = require('http');
 const url = require('url');
 
 class server{
-  constructor(){
-    let routerClass = require('./router');
-    let taskClass = require('./controllers/task');
-    let userClass = require('./controllers/user');
-    let userController = new userClass();
-    let taskController = new taskClass();
-    this.router = new routerClass(taskController, userController);
+  constructor(router){
+    this.router = router;
   }
 
   startServer(port = 2500){
