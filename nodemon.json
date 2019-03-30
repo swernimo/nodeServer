@@ -1,0 +1,6 @@
+{
+    "nodemonConfig": {
+        "ignore": ["spec/*", "*.json", "/*[sS]pec.js"],
+        "delay": "1500"
+      }
+}

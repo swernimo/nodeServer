@@ -1,0 +1,20 @@
+{
+  "name": "node-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jasmine",
+    "start": "node app.js",
+    "startWatch": "nodemon --config nodemon.config.json app.js",
+    "tdd": "nodemon --exec jasmine"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine": "^3.3.1",
+    "nodemon": "^1.18.10",
+    "sinon": "^7.3.1"
+  }
+}
