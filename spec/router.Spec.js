@@ -1,7 +1,3 @@
-class response{
-    writeHead(){}
-    end(){}
-}
 class request{
     constructor(method){
         this.method = method;
@@ -13,7 +9,7 @@ describe('Route', function(){
     var taskControllerSpy;
     var userControllerSpy;
     var router;
-    var httpResponse = new response();
+    var httpResponse = jasmine.createSpyObj(["writeHead", "end"]);
     var httpRequest = new request('GET');
 
     beforeAll(function(){
@@ -29,13 +25,11 @@ describe('Route', function(){
 
     describe('home route', function(){
         it('should return a 200', function(){
-            spyOn(httpResponse, 'writeHead');
             router.homeRoute(httpResponse);
             expect(httpResponse.writeHead).toHaveBeenCalledWith(200, {'Content-Type': 'text/plain'});
         });
 
         it('should write hello world', function(){
-            spyOn(httpResponse, 'end');
             router.homeRoute(httpResponse);
             expect(httpResponse.end).toHaveBeenCalledWith('Hello World from home route in router! \n');
         });
@@ -43,17 +37,14 @@ describe('Route', function(){
 
     describe('handle route not found', function(){
         it('should return a 404', function(){
-            spyOn(httpResponse, 'writeHead');
             router.routeNotFound(httpResponse);
             expect(httpResponse.writeHead).toHaveBeenCalledWith(404, {'Content-Type': 'text/plain'});
         });
 
         it('should write error message', function(){
-            spyOn(httpResponse, 'end');
             router.routeNotFound(httpResponse);
             expect(httpResponse.end).toHaveBeenCalledWith('These are not the pages you\'re looking for...');
         });
-
     });
 
     describe('task route', function(){
