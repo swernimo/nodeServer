@@ -17,10 +17,6 @@ describe('http server', function(){
             expect(routerSpy.homeRoute).toHaveBeenCalled();
            });
         });
-
-        it('should fail', function(){
-            expect(true).toBeFalsy();
-        });
     });
 
     describe('task request', function(){
